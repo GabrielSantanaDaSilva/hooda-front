@@ -7,15 +7,16 @@ import Carrosel from '../../Components/Carrosel/Carrosel';
 
 
 function Home() {
+    const [categorias, setCategorias] = useState<Categoria[]>([]);
+    const [showList, setShowList] = useState(false);
 
-        const [categorias, setCategorias] = useState<Categoria[]>([]);
-        async function buscarCategorias() {
-                await buscar('/categorias', setCategorias);
-        }
+    async function buscarCategorias() {
+        await buscar('/categorias', setCategorias);
+    }
 
-        useEffect(() => {
-                buscarCategorias();
-        }, [categorias.length]);
+    useEffect(() => {
+        buscarCategorias();
+    }, [categorias.length]);
 
         
         return (
@@ -60,4 +61,4 @@ function Home() {
         )
 }
 
-export default Home
+export default Home;

@@ -16,6 +16,7 @@ function Menu() {
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+
   return (
     <>
       <nav className="bg-hoodaLaranja border-gray-200">
@@ -99,7 +100,7 @@ function Menu() {
                     onClick={toggleDropdown}
                     className="bg-[rgb(254,147,4)] text-white px-4 py-2 rounded hover:bg-orange-600 focus:outline-none"
                   >
-                    Cadastro
+                    Cadastrar
                   </button>
                   {isOpen && (
                     <div className="absolute right-0 mt-2 w-[7rem] bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col ">
@@ -121,7 +122,9 @@ function Menu() {
             </ul>
           </div>
         </div>
-      </nav>        
+      </nav>
+
+
     </>
   );
 }
