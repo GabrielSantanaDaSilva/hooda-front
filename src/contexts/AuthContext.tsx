@@ -16,6 +16,7 @@ interface AuthContextProps {
   limparCart: () => void;
   items: Produto[];
   quantidadeItems: number;
+    
 }
 
 interface AuthProviderProps {
@@ -90,6 +91,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
     return (    // Adicionar as propriedades ao Provider já existente
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading, adicionarProduto, removerProduto, updateUsuarioContext, limparCart, items, quantidadeItems }}>
         <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading, adicionarProduto, removerProduto, updateUsuarioContext, limparCart, items, quantidadeItems }}>
             {children}
         </AuthContext.Provider>
